@@ -29,4 +29,13 @@ class OrderItem extends Model
      * @var array
      */
     protected $hidden = [];
+
+    /**
+     * Relationship.
+     *
+     */
+    public function Product()
+    {
+        return $this->belongsTo(Product::class, 'products_id', 'id');
+    }
 }

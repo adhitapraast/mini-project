@@ -41,5 +41,13 @@ Route::group(['prefix' => 'v1', 'middleware' => 'access-role'], function () {
         Route::get('/list/{status?}', [App\Http\Controllers\OrdersController::class, 'list']);
         Route::get('/show/{id}', [App\Http\Controllers\OrdersController::class, 'show']);
     });
+    
+    Route::group(['prefix' => 'summary'], function () {
+        Route::get('/order', [App\Http\Controllers\SummaryController::class, 'order']);
+        Route::get('/product', [App\Http\Controllers\SummaryController::class, 'product']);
+    });
+
+    Route::post('/export', [App\Http\Controllers\ExportImportController::class, 'export']);
+    Route::post('/import', [App\Http\Controllers\ExportImportController::class, 'import']);
 
 });

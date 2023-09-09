@@ -31,6 +31,15 @@ class Order extends Model
     protected $hidden = [];
 
     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+    ];
+
+    /**
      * Relationship.
      *
      */

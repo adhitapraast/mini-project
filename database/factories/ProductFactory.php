@@ -27,7 +27,7 @@ class ProductFactory extends Factory
         return [
             'name' => 'product - ' . fake()->text(30),
             'description' => fake()->realText(fake()->numberBetween(20, 60)),
-            'quantity' => rand(5, 15),
+            'quantity' => rand(5, 99),
             'price' => rand(10000, 100000) / 10,
         ];
     }

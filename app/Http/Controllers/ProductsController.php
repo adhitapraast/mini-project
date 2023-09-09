@@ -32,9 +32,9 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|max:255',
             'description' => 'required',
-            'quantity' => 'required|numeric',
+            'quantity' => 'required|numeric|max:999',
             'price' => 'required|decimal:2',
         ]);
 
@@ -82,9 +82,9 @@ class ProductsController extends Controller
         }
         
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|max:255',
             'description' => 'required',
-            'quantity' => 'required|numeric',
+            'quantity' => 'required|numeric|max:999',
             'price' => 'required|decimal:2',
         ]);
         
